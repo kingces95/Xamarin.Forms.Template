@@ -1,0 +1,3 @@
+;= mxbuild
+tst=pushd %SrcDir%mxbuild.tasks.test
+tsk=pushd %SrcDir%mxbuild.tasks

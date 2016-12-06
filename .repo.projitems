@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>285137f3-5463-4b9f-9236-db7e65807484</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>repo</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory).gitattributes" />
+    <None Include="$(MSBuildThisFileDirectory).gitignore" />
+    <None Include="$(MSBuildThisFileDirectory).gitmodules" />
+    <None Include="$(MSBuildThisFileDirectory).pre.props" />
+    <None Include="$(MSBuildThisFileDirectory).props" />
+    <None Include="$(MSBuildThisFileDirectory).targets" />
+    <None Include="$(MSBuildThisFileDirectory).version" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App.Droid\Xamarin.Forms.App.Droid.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App.iOS\Xamarin.Forms.App.iOS.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App.UWP\Xamarin.Forms.App.UWP.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App.Windows\Xamarin.Forms.App.Windows.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App.WinPhone\Xamarin.Forms.App.WinPhone.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\Xamarin.Forms.App\Xamarin.Forms.App.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)doskey.txt" />
+  </ItemGroup>
+</Project>
