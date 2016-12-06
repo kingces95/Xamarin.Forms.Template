@@ -1,3 +1,4 @@
 ;= mxbuild
 tst=pushd %SrcDir%mxbuild.tasks.test
 tsk=pushd %SrcDir%mxbuild.tasks
+scorch=git clean -fdX -e !lfx -e !packages
