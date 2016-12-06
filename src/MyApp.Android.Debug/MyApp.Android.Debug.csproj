@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  
+    PreProps
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MetaPlatform>monoDroid.app-7.0</MetaPlatform>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory)\, .pre.props))\.pre.props" />
+  <!--
+
+    Props
+  -->
+  <PropertyGroup>
+    <OutRelDir>..\MyApp.Android\</OutRelDir>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
+  <!--
+
+    Configurations
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'release|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <PropertyGroup>
+    <AssemblyName>MyApp.Android</AssemblyName>
+    <ProjectGuid>{DA7C5A33-EA06-4CBB-9D05-C843A885A925}</ProjectGuid>
+  </PropertyGroup>
+  <!--
+  
+    Source
+  -->
+  <ItemGroup>
+    <!--
+      Xamain Android VS tool is sensitive to the location of AndroidManifest.xml.
+      In order for the debugger to work AndroidManifest.xml must be located at 'Properties\'
+    -->
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <!--
+
+    Targets
+  -->
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
+  <Target Name="Build">
+    <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+  </Target>
+  <Target Name="Install">
+    <Message Importance="high" Text="Install Target"/>
+    <Message Importance="high" Text="  OutRelDir: $(OutRelDir)"/>
+    <Message Importance="high" Text="  OutBaseDir: $(OutBaseDir)"/>
+    <Message Importance="high" Text="  OutDirAbsolute: $(OutDirAbsolute)"/>
+    <Message Importance="high" Text="  OutDir: $(OutDir)"/>
+    <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
+  </Target>
+</Project>
