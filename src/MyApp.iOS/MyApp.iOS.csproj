@@ -1,5 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  
+    Properties
+  -->
+  <PropertyGroup>
+    <MetaPlatform>xamarin.ios.sim-1.0</MetaPlatform>
+  </PropertyGroup>
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory)\, .pre.props))\.pre.props" />
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
+  <!--
+
+    Hierarchy
+  -->
+  <ItemGroup>
+    <!--all E { ios }-->
+    <PlatformGroup Include="$(AllPlatformId)">
+      <Platforms>$(IosMobilePlatformId)</Platforms>
+    </PlatformGroup>
+    <!--ios E { xamarin.ios.sim, xamarin.ios.phone }-->
+    <PlatformGroup Include="$(IosMobilePlatformId)">
+      <Platforms>$(IosUnifiedSimAppPlatformId);$(IosUnifiedPhoneAppPlatformId)</Platforms>
+    </PlatformGroup>
+    <!--xamarin.ios.sim E { xamarin.ios.sim-1.0 }-->
+    <PlatformGroup Include="$(IosUnifiedSimAppPlatformId)">
+      <Platforms>$(IosUnifiedSimAppPlatformId-1_0)</Platforms>
+    </PlatformGroup>
+    <!--xamarin.ios.phone E { xamarin.ios.phone-1.0 }-->
+    <PlatformGroup Include="$(IosUnifiedPhoneAppPlatformId)">
+      <Platforms>$(IosUnifiedPhoneAppPlatformId-1_0)</Platforms>
+    </PlatformGroup>
+  </ItemGroup>
+  <!--
+
+    Properties
+  -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -88,6 +123,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="App.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -119,36 +155,15 @@
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.168\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.168\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Platform.iOS, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.168\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Forms.2.3.3.168\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyApp\MyApp.csproj">
-      <Project>{0e86711a-7fc8-4b36-8095-81632b726a06}</Project>
-      <Name>MyApp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Import Project="..\..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.2.3.3.168\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
-  </Target>
+  <ImportGroup>
+    <Import Project="$(NugetXamarinFormsIosShim)" />
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  </ImportGroup>
+  <!--
+  
+    Targets
+  -->
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
 </Project>
