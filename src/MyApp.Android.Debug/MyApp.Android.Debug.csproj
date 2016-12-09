@@ -21,10 +21,10 @@
 
     Configurations
   -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'debug|[none]' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'release|[none]' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'release|[none]' " />
   <PropertyGroup>
     <AssemblyName>MyApp.Android</AssemblyName>
     <ProjectGuid>{DA7C5A33-EA06-4CBB-9D05-C843A885A925}</ProjectGuid>

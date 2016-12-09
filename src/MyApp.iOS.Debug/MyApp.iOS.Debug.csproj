@@ -30,6 +30,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' "/>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' "/>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|[none]' " />
   <!--
   
     Targets

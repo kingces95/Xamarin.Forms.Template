@@ -1,5 +1,6 @@
 .vs
 *.bak
+*.user
 obj
 bin
 bld

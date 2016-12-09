@@ -38,19 +38,12 @@
     <RootNamespace>MyNamespace.iOS</RootNamespace>
     <AssemblyName>MyApp.iOS</AssemblyName>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.sim' ">
-    <MtouchDebug>true</MtouchDebug>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
-    <MtouchDebug>true</MtouchDebug>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
-    <MtouchDebug>true</MtouchDebug>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.sim' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.sim' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.phone' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.phone' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|[none]' " />
   <ImportGroup>
     <Import Project="$(NugetXamarinFormsIosShim)" />
   </ImportGroup>

@@ -42,10 +42,10 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|monodroid.app' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|monodroid.app' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|[none]' " />
   <ImportGroup>
     <Import Project="$(NugetXamarinFormsAndroidShim)" />
     <Import Project="$(NugetAndroidSupportAnimatedVectorDrawableShim)" />
