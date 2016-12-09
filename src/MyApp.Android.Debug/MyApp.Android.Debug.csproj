@@ -49,11 +49,6 @@
     <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
   <Target Name="Install">
-    <Message Importance="high" Text="Install Target"/>
-    <Message Importance="high" Text="  OutRelDir: $(OutRelDir)"/>
-    <Message Importance="high" Text="  OutBaseDir: $(OutBaseDir)"/>
-    <Message Importance="high" Text="  OutDirAbsolute: $(OutDirAbsolute)"/>
-    <Message Importance="high" Text="  OutDir: $(OutDir)"/>
     <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
   </Target>
 </Project>
