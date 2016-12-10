@@ -11,17 +11,35 @@
     Hierarchy
   -->
   <ItemGroup>
-    <!--all E { android }-->
+    <!--
+        all E { android }
+     -->
     <PlatformGroup Include="$(AllPlatformId)">
-      <Platforms>$(AndroidMobilePlatformId)</Platforms>
+      <Platforms>$(AndroidMobilePlatformId);$(IosMobilePlatformId)</Platforms>
     </PlatformGroup>
-    <!--android E { monodroid.app }-->
+    <!--
+        android E { monodroid.app }
+    -->
     <PlatformGroup Include="$(AndroidMobilePlatformId)">
       <Platforms>$(AndroidAppPlatformId)</Platforms>
     </PlatformGroup>
     <!--monodroid E { monodroid.app-7.0 }-->
     <PlatformGroup Include="$(AndroidAppPlatformId)">
       <Platforms>$(AndroidAppPlatformId-7_0)</Platforms>
+    </PlatformGroup>
+    <!--
+        ios E { xamarin.ios.sim, xamarin.ios.phone }
+    -->
+    <PlatformGroup Include="$(IosMobilePlatformId)">
+      <Platforms>$(IosUnifiedSimAppPlatformId);$(IosUnifiedPhoneAppPlatformId)</Platforms>
+    </PlatformGroup>
+    <!--xamarin.ios.sim E { xamarin.ios.sim-1.0 }-->
+    <PlatformGroup Include="$(IosUnifiedSimAppPlatformId)">
+      <Platforms>$(IosUnifiedSimAppPlatformId-1_0)</Platforms>
+    </PlatformGroup>
+    <!--xamarin.ios.phone E { xamarin.ios.phone-1.0 }-->
+    <PlatformGroup Include="$(IosUnifiedPhoneAppPlatformId)">
+      <Platforms>$(IosUnifiedPhoneAppPlatformId-1_0)</Platforms>
     </PlatformGroup>
   </ItemGroup>
   <!--
@@ -98,23 +116,32 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(MobilePlatform)' == '$(AndroidMobilePlatformId)' ">
+    <Compile Include="Resources\Resource.Designer.cs" />
+  </ItemGroup>
+  <!--
+  
+    Ios
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.sim' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.sim' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.phone' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.phone' "/>
+  <PropertyGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' " />
+  <ImportGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
+    <Import Project="$(NugetXamarinFormsIosShim)" />
+  </ImportGroup>
+  <ItemGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
   <!--
   
     Source
   -->
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="android\MainActivity.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="android\.dir.props" />
-    <None Include="GettingStarted.Xamarin" />
-    <None Include="android\Assets\AboutAssets.txt" />
-    <None Include="android\Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Resources\Resource.Designer.cs" />
-    <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\drawable\icon.png" />
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
@@ -123,10 +150,45 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.cs" />
+    <Compile Include="android\MainActivity.cs" />
+    <Compile Include="ios\AppDelegate.cs" />
+    <Compile Include="ios\Main.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <None Include="ios\.dir.props" />
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="android\.dir.props" />
+    <None Include="android\Assets\AboutAssets.txt" />
+    <None Include="android\Properties\AndroidManifest.xml" />
+    <ITunesArtwork Include="ios\iTunesArtwork" />
+    <ITunesArtwork Include="ios\iTunesArtwork@2x" />
+    <BundleResource Include="ios\Resources\Default-568h%402x.png" />
+    <BundleResource Include="ios\Resources\Default-Portrait.png" />
+    <BundleResource Include="ios\Resources\Default-Portrait%402x.png" />
+    <BundleResource Include="ios\Resources\Default.png" />
+    <BundleResource Include="ios\Resources\Default%402x.png" />
+    <BundleResource Include="ios\Resources\Icon-60%402x.png" />
+    <BundleResource Include="ios\Resources\Icon-60%403x.png" />
+    <BundleResource Include="ios\Resources\Icon-76.png" />
+    <BundleResource Include="ios\Resources\Icon-76%402x.png" />
+    <BundleResource Include="ios\Resources\Icon-Small-40.png" />
+    <BundleResource Include="ios\Resources\Icon-Small-40%402x.png" />
+    <BundleResource Include="ios\Resources\Icon-Small-40%403x.png" />
+    <BundleResource Include="ios\Resources\Icon-Small.png" />
+    <BundleResource Include="ios\Resources\Icon-Small%402x.png" />
+    <BundleResource Include="ios\Resources\Icon-Small%403x.png" />
+    <InterfaceDefinition Include="ios\Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
   <!--
   
     Targets
   -->
-  <Import Project="*\.dir.props" />
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
+  <ImportGroup>
+    <Import Project="*\.dir.props" />
+    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" Condition="false" />
+  </ImportGroup>
 </Project>

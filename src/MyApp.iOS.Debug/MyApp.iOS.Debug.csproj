@@ -14,7 +14,7 @@
     Props
   -->
   <PropertyGroup>
-    <OutRelDir>..\MyApp.iOS\</OutRelDir>
+    <OutRelDir>..\MyApp\</OutRelDir>
   </PropertyGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
   <!--
@@ -23,7 +23,7 @@
   -->
   <PropertyGroup>
     <ProjectGuid>{2E151525-AC35-4711-B418-C360F8B34931}</ProjectGuid>
-    <AssemblyName>MyApp.iOS</AssemblyName>
+    <AssemblyName>MyApp</AssemblyName>
     <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' "/>
@@ -41,6 +41,6 @@
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" Condition="false" />
   </ImportGroup>
   <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.iOS.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
 </Project>
