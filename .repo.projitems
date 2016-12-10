@@ -42,6 +42,7 @@
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\ios\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\MyApp.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\.dir.props" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\uwp\.dir.props" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)doskey.txt" />
