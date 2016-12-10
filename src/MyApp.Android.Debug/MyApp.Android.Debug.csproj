@@ -14,7 +14,7 @@
     Props
   -->
   <PropertyGroup>
-    <OutRelDir>..\MyApp.Android\</OutRelDir>
+    <OutRelDir>..\MyApp\</OutRelDir>
   </PropertyGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
   <!--
@@ -26,7 +26,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'debug|[none]' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'release|[none]' " />
   <PropertyGroup>
-    <AssemblyName>MyApp.Android</AssemblyName>
+    <AssemblyName>MyApp</AssemblyName>
     <ProjectGuid>{DA7C5A33-EA06-4CBB-9D05-C843A885A925}</ProjectGuid>
   </PropertyGroup>
   <!--
@@ -46,9 +46,9 @@
   -->
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
   <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
   <Target Name="Install">
-    <MSBuild Projects="$(OutRelDir)MyApp.Android.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
   </Target>
 </Project>

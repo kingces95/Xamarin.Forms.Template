@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp", "src\MyApp\MyApp.csproj", "{0E86711A-7FC8-4B36-8095-81632B726A06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Android", "src\MyApp.Android\MyApp.Android.csproj", "{B58EA25C-F476-4B84-A88B-7D5AF2E89476}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.iOS", "src\MyApp.iOS\MyApp.iOS.csproj", "{7ED39DB2-4544-43D1-9528-5043310BDCC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WinPhone", "src\MyApp.WinPhone\MyApp.WinPhone.csproj", "{36652A04-514D-4626-92FE-AE5A89E5C159}"
@@ -59,7 +57,8 @@ Global
 		Release|Win UAP (x86) = Release|Win UAP (x86)
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Android.ActiveCfg = Debug|[none]
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Android.ActiveCfg = debug|monoDroid.app
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Android.Build.0 = debug|monoDroid.app
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|iOS Phone.ActiveCfg = Debug|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|iOS Simulator.ActiveCfg = Debug|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Phone (x86).ActiveCfg = Debug|[none]
@@ -69,7 +68,8 @@ Global
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win UAP (ARM).ActiveCfg = Debug|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win UAP (x64).ActiveCfg = Debug|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win UAP (x86).ActiveCfg = Debug|[none]
-		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Android.ActiveCfg = Release|[none]
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Android.ActiveCfg = release|monoDroid.app
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Android.Build.0 = release|monoDroid.app
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|iOS Phone.ActiveCfg = Release|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|iOS Simulator.ActiveCfg = Release|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Phone (x86).ActiveCfg = Release|[none]
@@ -79,30 +79,6 @@ Global
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (ARM).ActiveCfg = Release|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (x64).ActiveCfg = Release|[none]
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (x86).ActiveCfg = Release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Android.ActiveCfg = debug|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Android.Build.0 = debug|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Android.Deploy.0 = debug|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|iOS Phone.ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|iOS Simulator.ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win Phone (x86).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win Tablet (ARM).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win Tablet (x64).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win Tablet (x86).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win UAP (ARM).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win UAP (x64).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Debug|Win UAP (x86).ActiveCfg = debug|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Android.ActiveCfg = release|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Android.Build.0 = release|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Android.Deploy.0 = release|monodroid.app
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|iOS Phone.ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|iOS Simulator.ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win Phone (x86).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win Tablet (ARM).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win Tablet (x64).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win Tablet (x86).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win UAP (ARM).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win UAP (x64).ActiveCfg = release|[none]
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476}.Release|Win UAP (x86).ActiveCfg = release|[none]
 		{7ED39DB2-4544-43D1-9528-5043310BDCC9}.Debug|Android.ActiveCfg = debug|[none]
 		{7ED39DB2-4544-43D1-9528-5043310BDCC9}.Debug|iOS Phone.ActiveCfg = debug|xamarin.ios.phone
 		{7ED39DB2-4544-43D1-9528-5043310BDCC9}.Debug|iOS Phone.Build.0 = debug|xamarin.ios.phone
@@ -350,7 +326,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0E86711A-7FC8-4B36-8095-81632B726A06} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{B58EA25C-F476-4B84-A88B-7D5AF2E89476} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 		{7ED39DB2-4544-43D1-9528-5043310BDCC9} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 		{36652A04-514D-4626-92FE-AE5A89E5C159} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 		{2D7856D7-EA47-4C23-8141-804272EC672E} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}

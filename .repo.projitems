@@ -41,6 +41,7 @@
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows\MyApp.Windows.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone\MyApp.WinPhone.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\android\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\MyApp.csproj" />
   </ItemGroup>
   <ItemGroup>
