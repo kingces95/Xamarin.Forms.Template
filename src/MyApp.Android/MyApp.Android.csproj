@@ -34,7 +34,6 @@
   <PropertyGroup>
     <ProjectGuid>{B58EA25C-F476-4B84-A88B-7D5AF2E89476}</ProjectGuid>
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <!--<ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>-->
     <RootNamespace>MyNamespace</RootNamespace>
     <AssemblyName>MyApp.Android</AssemblyName>
   </PropertyGroup>
