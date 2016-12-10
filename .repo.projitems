@@ -32,7 +32,6 @@
     <None Include="$(MSBuildThisFileDirectory).version" />
     <None Include="$(MSBuildThisFileDirectory)src\.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Android.Debug\MyApp.Android.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.Android\MyApp.Android.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.iOS\MyApp.iOS.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj" />
