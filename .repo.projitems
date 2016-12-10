@@ -34,7 +34,6 @@
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Android.Debug\MyApp.Android.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.UWP\MyApp.UWP.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows\MyApp.Windows.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj" />
@@ -42,6 +41,7 @@
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\android\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\ios\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\MyApp.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\.dir.props" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)doskey.txt" />

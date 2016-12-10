@@ -15,7 +15,7 @@
         all E { android }
      -->
     <PlatformGroup Include="$(AllPlatformId)">
-      <Platforms>$(AndroidMobilePlatformId);$(IosMobilePlatformId)</Platforms>
+      <Platforms>$(AndroidMobilePlatformId);$(IosMobilePlatformId);$(WindowsMobilePlatformId)</Platforms>
     </PlatformGroup>
     <!--
         android E { monodroid.app }
@@ -40,6 +40,24 @@
     <!--xamarin.ios.phone E { xamarin.ios.phone-1.0 }-->
     <PlatformGroup Include="$(IosUnifiedPhoneAppPlatformId)">
       <Platforms>$(IosUnifiedPhoneAppPlatformId-1_0)</Platforms>
+    </PlatformGroup>
+    <!--
+        windows E { uap.32, uap.64, uap.arm }
+     -->
+    <PlatformGroup Include="$(WindowsMobilePlatformId)">
+      <Platforms>$(WindowsUniversal32AppPlatformId);$(WindowsUniversal64AppPlatformId);$(WindowsUniversalArmAppPlatformId)</Platforms>
+    </PlatformGroup>
+    <!--uap.32 E { uap.32-10.0.10586.0 }-->
+    <PlatformGroup Include="$(WindowsUniversal32AppPlatformId)">
+      <Platforms>$(WindowsUniversal32AppPlatformId-10_0_10586_0)</Platforms>
+    </PlatformGroup>
+    <!--uap.64 E { uap.64-10.0.10586.0 }-->
+    <PlatformGroup Include="$(WindowsUniversal64AppPlatformId)">
+      <Platforms>$(WindowsUniversal64AppPlatformId-10_0_10586_0)</Platforms>
+    </PlatformGroup>
+    <!--uap.arm E { uap.arm-10.0.10586.0 }-->
+    <PlatformGroup Include="$(WindowsUniversalArmAppPlatformId)">
+      <Platforms>$(WindowsUniversalArmAppPlatformId-10_0_10586_0)</Platforms>
     </PlatformGroup>
   </ItemGroup>
   <!--
@@ -123,10 +141,10 @@
   
     Ios
   -->
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.sim' "/>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.sim' "/>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.phone' "/>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.phone' "/>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.sim' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.sim' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|xamarin.ios.phone' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|xamarin.ios.phone' " />
   <PropertyGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' " />
   <ImportGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
     <Import Project="$(NugetXamarinFormsIosShim)" />
@@ -138,6 +156,30 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <!--
+  
+    Windows Universal
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|uap.32' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|uap.32' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|uap.64' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|uap.64' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|uap.ARM' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|uap.ARM' " />
+  <PropertyGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
+    <PackageCertificateKeyFile>windows\uwp\Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
+    <Import Project="$(NugetXamarinFormsUapShim)" />
+  </ImportGroup>
+  <ItemGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>  <!--
   
     Source
   -->
@@ -181,6 +223,29 @@
     <BundleResource Include="ios\Resources\Icon-Small%402x.png" />
     <BundleResource Include="ios\Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="ios\Resources\LaunchScreen.storyboard" />
+    <None Include="windows\.dir.props" />
+    <None Include="windows\uwp\.dir.props" />
+    <None Include="project.json" />
+    <None Include="project.lock.json" />
+    <Compile Include="windows\uwp\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <AppxManifest Include="windows\uwp\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="windows\uwp\Windows_TemporaryKey.pfx" />
+    <Content Include="windows\uwp\Properties\Default.rd.xml" />
+    <Content Include="windows\uwp\Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="windows\uwp\Assets\SplashScreen.scale-200.png" />
+    <Content Include="windows\uwp\Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="windows\uwp\Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="windows\uwp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="windows\uwp\Assets\StoreLogo.png" />
+    <Content Include="windows\uwp\Assets\Wide310x150Logo.scale-200.png" />
+    <Page Include="windows\uwp\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <!--
   

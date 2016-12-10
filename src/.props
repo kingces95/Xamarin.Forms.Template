@@ -41,8 +41,9 @@
     <!--Xamarin.Forms-->
     <NugetXamarinFormsPortableShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\shim.props</NugetXamarinFormsPortableShim>
     <NugetXamarinFormsAndroidShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\MonoAndroid10\shim.props</NugetXamarinFormsAndroidShim>
+    <NugetXamarinFormsUapShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\uap10.0\shim.props</NugetXamarinFormsUapShim>
     <NugetXamarinFormsWindowsTabletShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\win81\shim.props</NugetXamarinFormsWindowsTabletShim>
-    <NugetXamarinFormsPhoneTabletShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\wpa81\shim.props</NugetXamarinFormsPhoneTabletShim>
+    <NugetXamarinFormsWindowsPhoneTabletShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\wpa81\shim.props</NugetXamarinFormsWindowsPhoneTabletShim>
     <NugetXamarinFormsIosShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\Xamarin.iOS10\shim.props</NugetXamarinFormsIosShim>
     <NugetXamarinFormsUapShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\uap10.0\shim.props</NugetXamarinFormsUapShim>
     <NugetXamarinFormsWinShim>$(PkgDir)Xamarin.Forms.$(NugetXamarinFormsVersion)\lib\win81\shim.props</NugetXamarinFormsWinShim>

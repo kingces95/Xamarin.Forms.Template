@@ -16,7 +16,7 @@
     Props
   -->
   <PropertyGroup>
-    <OutRelDir>..\MyApp.UWP\</OutRelDir>
+    <OutRelDir>..\MyApp\</OutRelDir>
   </PropertyGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
   <!--
@@ -32,9 +32,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' " />
   <PropertyGroup>
-    <AssemblyName>MyApp.UWP</AssemblyName>
+    <AssemblyName>MyApp</AssemblyName>
     <OutputType>AppContainerExe</OutputType>
-    <ProjectName>MyApp.UWP</ProjectName>
+    <ProjectName>MyApp</ProjectName>
   </PropertyGroup>
   <!--
   
@@ -48,9 +48,9 @@
   -->
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
   <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.UWP.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
   <Target Name="Install">
-    <MSBuild Projects="$(OutRelDir)MyApp.UWP.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
   </Target>
 </Project>

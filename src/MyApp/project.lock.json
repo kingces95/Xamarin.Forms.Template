@@ -1,5 +1,4 @@
 {
-  "locked": false,
   "version": 2,
   "targets": {
     "UAP,Version=v10.0": {
@@ -15646,5 +15645,10 @@
       "Xamarin.Forms >= 2.3.3.168"
     ],
     "UAP,Version=v10.0": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {},
+  "packageFolders": {
+    "C:\\Users\\kingc\\.nuget\\packages\\": {}
   }
 }
