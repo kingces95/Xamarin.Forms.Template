@@ -10,7 +10,7 @@
   <Properties>
     <DisplayName>MyApp.WinPhone</DisplayName>
     <PublisherDisplayName>kingc</PublisherDisplayName>
-    <Logo>Assets\StoreLogo.png</Logo>
+    <Logo>windows\phone\Assets\StoreLogo.png</Logo>
   </Properties>
 
   <Prerequisites>
@@ -28,13 +28,13 @@
         EntryPoint="MyApp.WinPhone.App">
       <m3:VisualElements
           DisplayName="MyApp.WinPhone"
-          Square150x150Logo="Assets\Logo.png"
-          Square44x44Logo="Assets\SmallLogo.png"
+          Square150x150Logo="windows\phone\Assets\Logo.png"
+          Square44x44Logo="windows\phone\Assets\SmallLogo.png"
           Description="MyApp.WinPhone"
           ForegroundText="light"
           BackgroundColor="transparent">
-        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png"/>
-        <m3:SplashScreen Image="Assets\SplashScreen.png"/>
+        <m3:DefaultTile Wide310x150Logo="windows\phone\Assets\WideLogo.png" Square71x71Logo="windows\phone\Assets\Square71x71Logo.png"/>
+        <m3:SplashScreen Image="windows\phone\Assets\SplashScreen.png"/>
       </m3:VisualElements>
     </Application>
   </Applications>

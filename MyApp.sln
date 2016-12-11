@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.UWP.Debug", "src\MyAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WinPhone.Debug", "src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj", "{F175C9BF-6450-471F-A1C5-02D8A30E2E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WinPhone", "src\MyApp.WinPhone\MyApp.WinPhone.csproj", "{36652A04-514D-4626-92FE-AE5A89E5C159}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		.repo.projitems*{285137f3-5463-4b9f-9236-db7e65807484}*SharedItemsImports = 13
@@ -57,7 +55,8 @@ Global
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|iOS Phone.Build.0 = debug|xamarin.ios.phone
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|iOS Simulator.ActiveCfg = debug|xamarin.ios.sim
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|iOS Simulator.Build.0 = debug|xamarin.ios.sim
-		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Phone (x86).ActiveCfg = Debug|[none]
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Phone (x86).ActiveCfg = debug|wpa.32
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Phone (x86).Build.0 = debug|wpa.32
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Tablet (ARM).ActiveCfg = debug|win.arm
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Tablet (ARM).Build.0 = debug|win.arm
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Debug|Win Tablet (x64).ActiveCfg = debug|win.64
@@ -76,7 +75,8 @@ Global
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|iOS Phone.Build.0 = release|xamarin.ios.phone
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|iOS Simulator.ActiveCfg = release|xamarin.ios.sim
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|iOS Simulator.Build.0 = release|xamarin.ios.sim
-		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Phone (x86).ActiveCfg = Release|[none]
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Phone (x86).ActiveCfg = release|wpa.32
+		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Phone (x86).Build.0 = release|wpa.32
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Tablet (ARM).ActiveCfg = release|win.arm
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Tablet (ARM).Build.0 = release|win.arm
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win Tablet (x64).ActiveCfg = release|win.64
@@ -231,28 +231,6 @@ Global
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (ARM).ActiveCfg = release|[none]
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (x64).ActiveCfg = release|[none]
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (x86).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Android.ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|iOS Phone.ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|iOS Simulator.ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win Phone (x86).ActiveCfg = debug|wpa.32
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win Phone (x86).Build.0 = debug|wpa.32
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win Tablet (ARM).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win Tablet (x64).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win Tablet (x86).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win UAP (ARM).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win UAP (x64).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Debug|Win UAP (x86).ActiveCfg = debug|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Android.ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|iOS Phone.ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|iOS Simulator.ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win Phone (x86).ActiveCfg = release|wpa.32
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win Phone (x86).Build.0 = release|wpa.32
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win Tablet (ARM).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win Tablet (x64).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win Tablet (x86).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win UAP (ARM).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win UAP (x64).ActiveCfg = release|[none]
-		{36652A04-514D-4626-92FE-AE5A89E5C159}.Release|Win UAP (x86).ActiveCfg = release|[none]
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -264,6 +242,5 @@ Global
 		{563B6AD6-AD53-46E8-9B67-D04669A57E25} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 		{0BDADB8F-5A5D-40E5-84A6-56CBA9D920AE} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{36652A04-514D-4626-92FE-AE5A89E5C159} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
 	EndGlobalSection
 EndGlobal
