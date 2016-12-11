@@ -18,7 +18,7 @@
   <!--shim-->
   <PropertyGroup>
     <ShimInclude>$(ShimDir)**\*.csproj</ShimInclude>
-    <ShimExclude>$(ShimDir)**\Mxbuild.Debug.csproj</ShimExclude>
+    <ShimExclude>$(ShimDir)**\*.Debug.csproj</ShimExclude>
     <IsBuildTargetBuild Condition="'$(BuildTarget)'=='build' OR '$(BuildTarget)'=='rebuild'">true</IsBuildTargetBuild>
     <IsBuildingFromRoot Condition="'$(StartupDir)'=='$(RootDir)'">true</IsBuildingFromRoot>
   </PropertyGroup>

@@ -42,9 +42,15 @@
       <Platforms>$(IosUnifiedPhoneAppPlatformId-1_0)</Platforms>
     </PlatformGroup>
     <!--
-        windows E { uap.32, uap.64, uap.arm }
+        windows E { windows.universal, windows.tablet }
      -->
     <PlatformGroup Include="$(WindowsMobilePlatformId)">
+      <Platforms>$(WindowsUniversalMobileSubPlatformId);$(WindowsTabletMobileSubPlatformId)</Platforms>
+    </PlatformGroup>
+    <!--
+        windows.universal E { uap.32, uap.64, uap.arm }
+     -->
+    <PlatformGroup Include="$(WindowsUniversalMobileSubPlatformId)">
       <Platforms>$(WindowsUniversal32AppPlatformId);$(WindowsUniversal64AppPlatformId);$(WindowsUniversalArmAppPlatformId)</Platforms>
     </PlatformGroup>
     <!--uap.32 E { uap.32-10.0.10586.0 }-->
@@ -58,6 +64,24 @@
     <!--uap.arm E { uap.arm-10.0.10586.0 }-->
     <PlatformGroup Include="$(WindowsUniversalArmAppPlatformId)">
       <Platforms>$(WindowsUniversalArmAppPlatformId-10_0_10586_0)</Platforms>
+    </PlatformGroup>
+    <!--
+        windows.tablet E { win.32, win.64, win.arm }
+    -->
+    <PlatformGroup Include="$(WindowsTabletMobileSubPlatformId)">
+      <Platforms>$(WindowsTablet32AppPlatformId);$(WindowsTablet64AppPlatformId);$(WindowsTabletArmAppPlatformId)</Platforms>
+    </PlatformGroup>
+    <!--win.32 E { win.32-8_1 }-->
+    <PlatformGroup Include="$(WindowsTablet32AppPlatformId)">
+      <Platforms>$(WindowsTablet32AppPlatformId-8_1)</Platforms>
+    </PlatformGroup>
+    <!--win.64 E { win.64-8_1 }-->
+    <PlatformGroup Include="$(WindowsTablet64AppPlatformId)">
+      <Platforms>$(WindowsTablet64AppPlatformId-8_1)</Platforms>
+    </PlatformGroup>
+    <!--win.arm E { win.arm-8_1 }-->
+    <PlatformGroup Include="$(WindowsTabletArmAppPlatformId)">
+      <Platforms>$(WindowsTabletArmAppPlatformId-8_1)</Platforms>
     </PlatformGroup>
   </ItemGroup>
   <!--
@@ -155,6 +179,23 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+  </ItemGroup>
+  <!--
+  
+    Windows
+  -->
+  <ItemGroup Condition=" '$(MobilePlatform)' == '$(WindowsMobilePlatformId)' ">
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
   <!--
   
     Windows Universal
@@ -167,19 +208,27 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|uap.ARM' " />
   <PropertyGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
     <PackageCertificateKeyFile>windows\uwp\Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <ProjectLockFile>windows\uwp\project.lock.json</ProjectLockFile>
   </PropertyGroup>
-  <ImportGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
-    <Import Project="$(NugetXamarinFormsUapShim)" />
-  </ImportGroup>
   <ItemGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsUniversalMobileSubPlatformId)' ">
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-  </ItemGroup>  <!--
+  </ItemGroup>
+  <!--
+  
+    Windows Tablet
+  -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|win.arm'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|win.arm'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|win.64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|win.64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|win.32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|win.32'" />
+  <PropertyGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsTabletMobileSubPlatformId)' ">
+    <PackageCertificateKeyFile>windows\tablet\Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(MobileSubPlatform)' == '$(WindowsTabletMobileSubPlatformId)' ">
+    <Import Project="$(NugetXamarinFormsWindowsTabletShim)" />
+  </ImportGroup>
+  <!--
   
     Source
   -->
@@ -193,18 +242,16 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="Resources\AboutResources.txt" />
     <Compile Include="App.cs" />
     <Compile Include="android\MainActivity.cs" />
-    <Compile Include="ios\AppDelegate.cs" />
-    <Compile Include="ios\Main.cs" />
-    <None Include="Entitlements.plist" />
-    <None Include="Info.plist" />
-    <None Include="ios\.dir.props" />
-    <None Include="Resources\AboutResources.txt" />
-    <None Include="GettingStarted.Xamarin" />
     <None Include="android\.dir.props" />
     <None Include="android\Assets\AboutAssets.txt" />
     <None Include="android\Properties\AndroidManifest.xml" />
+    <Compile Include="ios\AppDelegate.cs" />
+    <Compile Include="ios\Main.cs" />
+    <None Include="ios\.dir.props" />
     <ITunesArtwork Include="ios\iTunesArtwork" />
     <ITunesArtwork Include="ios\iTunesArtwork@2x" />
     <BundleResource Include="ios\Resources\Default-568h%402x.png" />
@@ -224,9 +271,10 @@
     <BundleResource Include="ios\Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="ios\Resources\LaunchScreen.storyboard" />
     <None Include="windows\.dir.props" />
+    <None Include="windows\tablet\.dir.props" />
+    <None Include="windows\uwp\project.json" />
+    <None Include="windows\uwp\project.lock.json" />
     <None Include="windows\uwp\.dir.props" />
-    <None Include="project.json" />
-    <None Include="project.lock.json" />
     <Compile Include="windows\uwp\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -243,6 +291,21 @@
     <Content Include="windows\uwp\Assets\StoreLogo.png" />
     <Content Include="windows\uwp\Assets\Wide310x150Logo.scale-200.png" />
     <Page Include="windows\uwp\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="windows\tablet\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <AppxManifest Include="windows\tablet\Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="windows\tablet\Windows_TemporaryKey.pfx" />
+    <Content Include="windows\tablet\Assets\Logo.scale-100.png" />
+    <Content Include="windows\tablet\Assets\SmallLogo.scale-100.png" />
+    <Content Include="windows\tablet\Assets\SplashScreen.scale-100.png" />
+    <Content Include="windows\tablet\Assets\StoreLogo.scale-100.png" />
+    <Page Include="windows\tablet\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

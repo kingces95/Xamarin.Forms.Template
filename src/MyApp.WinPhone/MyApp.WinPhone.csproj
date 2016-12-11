@@ -43,7 +43,7 @@
     <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <ImportGroup>
-    <Import Project="$(NugetXamarinFormsPhoneTabletShim)" />
+    <Import Project="$(NugetXamarinFormsWindowsPhoneShim)" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|[none]' " />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|[none]' " />

@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace MyNamespace.UWP {
+namespace MyNamespace.Windows {
     public sealed partial class MainPage {
         public MainPage() {
             this.InitializeComponent();

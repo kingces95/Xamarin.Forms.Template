@@ -9,6 +9,9 @@
     <ItemGroup Condition="'$(MobilePlatform)' != '$(WindowsMobilePlatformId)'">
       <Compile Remove="windows\**\*"/>
       <Page Remove="windows\**\*"/>
+      <AppxManifest Remove="windows\**\*"/>
+      <Content Remove="windows\**\*"/>
+      <ApplicationDefinition Remove="windows\**\*"/>
     </ItemGroup>
   </Target>
 

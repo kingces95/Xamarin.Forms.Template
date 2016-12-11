@@ -16,7 +16,7 @@
     Props
   -->
   <PropertyGroup>
-    <OutRelDir>..\MyApp.Windows\</OutRelDir>
+    <OutRelDir>..\MyApp\</OutRelDir>
   </PropertyGroup>
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
   <!--
@@ -32,9 +32,9 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' " />
   <PropertyGroup>
-    <AssemblyName>MyApp.Windows</AssemblyName>
+    <AssemblyName>MyApp</AssemblyName>
     <OutputType>AppContainerExe</OutputType>
-    <ProjectName>MyApp.Windows</ProjectName>
+    <ProjectName>MyApp</ProjectName>
   </PropertyGroup>
   <!--
   
@@ -48,6 +48,6 @@
   -->
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
   <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.Windows.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
 </Project>

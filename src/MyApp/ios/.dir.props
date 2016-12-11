@@ -8,6 +8,9 @@
   <Target Name="_IosDirProps">
     <ItemGroup Condition="'$(MobilePlatform)' != '$(IosMobilePlatformId)'">
       <Compile Remove="ios\**\*"/>
+      <ITunesArtwork Remove="ios\**\*"/>
+      <BundleResource Remove="ios\**\*"/>
+      <InterfaceDefinition Remove="ios\**\*"/>
     </ItemGroup>
   </Target>
 

@@ -35,13 +35,13 @@
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows\MyApp.Windows.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone\MyApp.WinPhone.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\android\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\ios\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\MyApp.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\.dir.props" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\tablet\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\uwp\.dir.props" />
   </ItemGroup>
   <ItemGroup>

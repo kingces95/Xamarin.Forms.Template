@@ -9,6 +9,9 @@
     <ItemGroup Condition="'$(MobileSubPlatform)' != '$(WindowsUniversalMobileSubPlatformId)'">
       <Compile Remove="windows\uwp\**\*"/>
       <Page Remove="windows\uwp\**\*"/>
+      <AppxManifest Remove="windows\uwp\**\*"/>
+      <Content Remove="windows\uwp\**\*"/>
+      <ApplicationDefinition Remove="windows\uwp\**\*"/>
     </ItemGroup>
   </Target>
 

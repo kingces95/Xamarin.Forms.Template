@@ -50,7 +50,4 @@
   <Target Name="Build">
     <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
   </Target>
-  <Target Name="Install">
-    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Install" Properties="Platform=$(MetaPlatform)" />
-  </Target>
 </Project>
