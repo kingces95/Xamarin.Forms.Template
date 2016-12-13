@@ -8,18 +8,27 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = ".repo", ".repo.shproj", "{285137F3-5463-4B9F-9236-DB7E65807484}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5C1DA352-D1AA-4DB9-9622-C4D07E456C85}"
+	ProjectSection(SolutionItems) = preProject
+		src\.props = src\.props
+	EndProjectSection
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "mxbuild", "sub\mxbuild\mxbuild.shproj", "{2FDD0418-FA09-4556-B6ED-10E07C1F6DB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Android.Debug", "src\MyApp.Android.Debug\MyApp.Android.Debug.csproj", "{DA7C5A33-EA06-4CBB-9D05-C843A885A925}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.iOS.Debug", "src\MyApp\debug\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj", "{2E151525-AC35-4711-B418-C360F8B34931}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.iOS.Debug", "src\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj", "{2E151525-AC35-4711-B418-C360F8B34931}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Windows.Debug", "src\MyApp\debug\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj", "{563B6AD6-AD53-46E8-9B67-D04669A57E25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Windows.Debug", "src\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj", "{563B6AD6-AD53-46E8-9B67-D04669A57E25}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.UWP.Debug", "src\MyApp\debug\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj", "{0BDADB8F-5A5D-40E5-84A6-56CBA9D920AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.UWP.Debug", "src\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj", "{0BDADB8F-5A5D-40E5-84A6-56CBA9D920AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WinPhone.Debug", "src\MyApp\debug\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj", "{F175C9BF-6450-471F-A1C5-02D8A30E2E04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WinPhone.Debug", "src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj", "{F175C9BF-6450-471F-A1C5-02D8A30E2E04}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dbg", "dbg", "{88E180D9-C51F-40EE-8156-B445EC4EF5DC}"
+	ProjectSection(SolutionItems) = preProject
+		src\MyApp\debug\debugger.props = src\MyApp\debug\debugger.props
+		src\MyApp\debug\windows.debugger.props = src\MyApp\debug\windows.debugger.props
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Android.Debug", "src\MyApp\debug\MyApp.Android.Debug\MyApp.Android.Debug.csproj", "{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -89,30 +98,6 @@ Global
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (x64).Build.0 = release|uap.64
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (x86).ActiveCfg = release|uap.32
 		{0E86711A-7FC8-4B36-8095-81632B726A06}.Release|Win UAP (x86).Build.0 = release|uap.32
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Android.ActiveCfg = debug|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Android.Build.0 = debug|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Android.Deploy.0 = debug|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|iOS Phone.ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|iOS Simulator.ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win Phone (x86).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win Tablet (ARM).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win Tablet (x64).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win Tablet (x86).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win UAP (ARM).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win UAP (x64).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Debug|Win UAP (x86).ActiveCfg = debug|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Android.ActiveCfg = release|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Android.Build.0 = release|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Android.Deploy.0 = release|Any CPU
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|iOS Phone.ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|iOS Simulator.ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win Phone (x86).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win Tablet (ARM).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win Tablet (x64).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win Tablet (x86).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win UAP (ARM).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win UAP (x64).ActiveCfg = release|[none]
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925}.Release|Win UAP (x86).ActiveCfg = release|[none]
 		{2E151525-AC35-4711-B418-C360F8B34931}.Debug|Android.ActiveCfg = debug|[none]
 		{2E151525-AC35-4711-B418-C360F8B34931}.Debug|iOS Phone.ActiveCfg = debug|iPhone
 		{2E151525-AC35-4711-B418-C360F8B34931}.Debug|iOS Phone.Build.0 = debug|iPhone
@@ -231,16 +216,76 @@ Global
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (ARM).ActiveCfg = release|[none]
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (x64).ActiveCfg = release|[none]
 		{F175C9BF-6450-471F-A1C5-02D8A30E2E04}.Release|Win UAP (x86).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Android.ActiveCfg = debug|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Android.Build.0 = debug|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Android.Deploy.0 = debug|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Phone.ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Phone.Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Phone.Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Simulator.ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Simulator.Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|iOS Simulator.Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Phone (x86).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Phone (x86).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Phone (x86).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (ARM).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (ARM).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (ARM).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x64).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x64).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x64).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x86).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x86).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win Tablet (x86).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (ARM).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (ARM).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (ARM).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x64).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x64).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x64).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x86).ActiveCfg = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x86).Build.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Debug|Win UAP (x86).Deploy.0 = debug|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Android.ActiveCfg = release|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Android.Build.0 = release|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Android.Deploy.0 = release|Any CPU
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Phone.ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Phone.Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Phone.Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Simulator.ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Simulator.Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|iOS Simulator.Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Phone (x86).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Phone (x86).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Phone (x86).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (ARM).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (ARM).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (ARM).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x64).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x64).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x64).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x86).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x86).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win Tablet (x86).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (ARM).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (ARM).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (ARM).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x64).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x64).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x64).Deploy.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x86).ActiveCfg = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x86).Build.0 = release|[none]
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25}.Release|Win UAP (x86).Deploy.0 = release|[none]
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0E86711A-7FC8-4B36-8095-81632B726A06} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{DA7C5A33-EA06-4CBB-9D05-C843A885A925} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{2E151525-AC35-4711-B418-C360F8B34931} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{563B6AD6-AD53-46E8-9B67-D04669A57E25} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{0BDADB8F-5A5D-40E5-84A6-56CBA9D920AE} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
-		{F175C9BF-6450-471F-A1C5-02D8A30E2E04} = {5C1DA352-D1AA-4DB9-9622-C4D07E456C85}
+		{2E151525-AC35-4711-B418-C360F8B34931} = {88E180D9-C51F-40EE-8156-B445EC4EF5DC}
+		{563B6AD6-AD53-46E8-9B67-D04669A57E25} = {88E180D9-C51F-40EE-8156-B445EC4EF5DC}
+		{0BDADB8F-5A5D-40E5-84A6-56CBA9D920AE} = {88E180D9-C51F-40EE-8156-B445EC4EF5DC}
+		{F175C9BF-6450-471F-A1C5-02D8A30E2E04} = {88E180D9-C51F-40EE-8156-B445EC4EF5DC}
+		{6F788D10-F32B-4B5E-9652-7C11ABB2AB25} = {88E180D9-C51F-40EE-8156-B445EC4EF5DC}
 	EndGlobalSection
 EndGlobal

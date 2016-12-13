@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutRelDir>..\..\</OutRelDir>
+    <AssemblyName>MyApp</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <TargetProject Include="$(OutRelDir)MyApp.csproj"/>
+  </ItemGroup>
+  <ImportGroup>
+    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory)\, .pre.props))\.pre.props" />
+    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
+    <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
+  </ImportGroup>
+  <Target Name="Build">
+    <MSBuild Projects="@(TargetProject)" Targets="Build" Properties="Platform=$(MetaPlatform)" />
+  </Target>
+</Project>

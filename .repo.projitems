@@ -31,12 +31,14 @@
     <None Include="$(MSBuildThisFileDirectory).targets" />
     <None Include="$(MSBuildThisFileDirectory).version" />
     <None Include="$(MSBuildThisFileDirectory)src\.props" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.Android.Debug\MyApp.Android.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj" />
-    <None Include="$(MSBuildThisFileDirectory)src\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\android\.dir.props" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\windows.debugger.props" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\debugger.props" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.Android.Debug\MyApp.Android.Debug.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.iOS.Debug\MyApp.iOS.Debug.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.UWP.Debug\MyApp.UWP.Debug.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.Windows.Debug\MyApp.Windows.Debug.csproj" />
+    <None Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.WinPhone.Debug\MyApp.WinPhone.Debug.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\ios\.dir.props" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\MyApp.csproj" />
     <None Include="$(MSBuildThisFileDirectory)src\MyApp\windows\.dir.props" />
@@ -45,5 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="$(MSBuildThisFileDirectory)doskey.txt" />
+    <Content Include="$(MSBuildThisFileDirectory)src\MyApp\debug\MyApp.Android.Debug\Properties\AndroidManifest.xml" />
   </ItemGroup>
 </Project>

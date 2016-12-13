@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+  
+    Properties
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MetaPlatform>xamarin.ios.sim-1.0</MetaPlatform>
+    <!--
+      Xamain iOS VS tooling is sensitive to the location of MtouchDebug property.
+      In order for the debugger to work MtouchDebug must be declared in the .csproj
+    -->
+    <MtouchDebug>true</MtouchDebug>
+    <!--
+      Xamain iOS VS tooling is sensitive to the location of AssemblyName property.
+      In order for the debugger to work AssemblyName must be declared in the .csproj
+    -->
+    <AssemblyName>MyApp</AssemblyName>
+  </PropertyGroup>
+  <Import Project="..\debugger.props" />
+  <!--
+
+    Configurations
+  -->
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|[none]' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' " />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' " />
+    <!--
+      If the following import is missing then Xamain iOS VS tooling will "repair" the .csproj
+      By adding a false condition we can satisfy the tooling while allowing mxbuild to handle the import
+    -->
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" Condition="false" />
+</Project>

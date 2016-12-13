@@ -2,22 +2,14 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--
   
-    PreProps
+    Properties
   -->
   <PropertyGroup>
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <MetaPlatform Condition=" '$(Platform)' == 'x86'">wpa.32-8.1</MetaPlatform>
     <MetaPlatform Condition=" '$(Platform)' == 'ARM'">wpa.arm-8.1</MetaPlatform>
   </PropertyGroup>
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory)\, .pre.props))\.pre.props" />
-  <!--
-
-    Props
-  -->
-  <PropertyGroup>
-    <OutRelDir>..\MyApp\</OutRelDir>
-  </PropertyGroup>
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
+  <Import Project="..\windows.debugger.props" />
   <!--
 
     Configurations
@@ -28,23 +20,4 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' " />
-  <PropertyGroup>
-    <AssemblyName>MyApp</AssemblyName>
-    <OutputType>AppContainerExe</OutputType>
-    <ProjectName>MyApp</ProjectName>
-  </PropertyGroup>
-  <!--
-  
-    Source
-  -->
-  <ItemGroup>
-  </ItemGroup>
-  <!--
-
-    Targets
-  -->
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
-  <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
-  </Target>
 </Project>

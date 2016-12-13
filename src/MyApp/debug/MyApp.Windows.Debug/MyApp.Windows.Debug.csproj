@@ -10,15 +10,7 @@
     <MetaPlatform Condition=" '$(Platform)' == 'x64'">win.64-8.1</MetaPlatform>
     <MetaPlatform Condition=" '$(Platform)' == 'ARM'">win.arm-8.1</MetaPlatform>
   </PropertyGroup>
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildProjectDirectory)\, .pre.props))\.pre.props" />
-  <!--
-
-    Props
-  -->
-  <PropertyGroup>
-    <OutRelDir>..\MyApp\</OutRelDir>
-  </PropertyGroup>
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .props))\.props" />
+  <Import Project="..\windows.debugger.props" />
   <!--
 
     Configurations
@@ -31,23 +23,4 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' " />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' " />
-  <PropertyGroup>
-    <AssemblyName>MyApp</AssemblyName>
-    <OutputType>AppContainerExe</OutputType>
-    <ProjectName>MyApp</ProjectName>
-  </PropertyGroup>
-  <!--
-  
-    Source
-  -->
-  <ItemGroup>
-  </ItemGroup>
-  <!--
-
-    Targets
-  -->
-  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), .targets))\.targets" />
-  <Target Name="Build">
-    <MSBuild Projects="$(OutRelDir)MyApp.csproj" Targets="Build" Properties="Platform=$(MetaPlatform)" />
-  </Target>
 </Project>
