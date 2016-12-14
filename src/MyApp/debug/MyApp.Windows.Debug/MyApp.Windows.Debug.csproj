@@ -6,6 +6,7 @@
   -->
   <PropertyGroup>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Platform Condition="'$(Platform)'==''">x86</Platform>
     <MetaPlatform Condition=" '$(Platform)' == 'x86'">win.32-8.1</MetaPlatform>
     <MetaPlatform Condition=" '$(Platform)' == 'x64'">win.64-8.1</MetaPlatform>
     <MetaPlatform Condition=" '$(Platform)' == 'ARM'">win.arm-8.1</MetaPlatform>
