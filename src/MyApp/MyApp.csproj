@@ -170,11 +170,6 @@
   <ItemGroup Condition=" '$(MobilePlatform)' == '$(AndroidMobilePlatformId)' ">
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.ObjectModel" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup Condition=" '$(MobilePlatform)' == '$(AndroidMobilePlatformId)' ">
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -192,9 +187,6 @@
     <Import Project="$(NugetXamarinFormsIosShim)" />
   </ImportGroup>
   <ItemGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup Condition=" '$(MobilePlatform)' == '$(IosMobilePlatformId)' ">
@@ -259,6 +251,17 @@
   </ImportGroup>
   <!--
   
+    References
+  -->
+  <ItemGroup Condition=" '$(MobilePlatform)' == '$(AndroidMobilePlatformId)' ">
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ObjectModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <!--
+  
     Source
   -->
   <ItemGroup>
@@ -269,8 +272,6 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <Compile Include="App.cs" />
