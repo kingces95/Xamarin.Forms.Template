@@ -7,7 +7,8 @@
   <PropertyGroup>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Platform Condition="'$(Platform)'==''">iPhoneSimulator</Platform>
-    <MetaPlatform>xamarin.ios.sim-1.0</MetaPlatform>
+    <MetaPlatform Condition="'$(Platform)'=='iPhoneSimulator'">xamarin.ios.sim-1.0</MetaPlatform>
+    <MetaPlatform Condition="'$(Platform)'=='iPhone'">xamarin.ios.phone-1.0</MetaPlatform>
     <!--
       Xamain iOS VS tooling is sensitive to the location of MtouchDebug property.
       In order for the debugger to work MtouchDebug must be declared in the .csproj
@@ -70,7 +71,7 @@
     </PropertyGroup>
 
     <!--source sync path-->
-    <GenerateBuildSessionId ProjectFullPath="$(DebuggerTargetProject)" ProjectName="$(DebuggerTargetProjectName)">
+    <GenerateBuildSessionId ProjectFullPath="$(DebugTargetProject)" ProjectName="$(DebuggerTargetProjectName)">
       <Output TaskParameter="BuildSessionId" PropertyName="DebuggerTargetBuildSessionId" />
       <Output TaskParameter="BuildAppName" PropertyName="DebuggerTargetBuildAppName" />
     </GenerateBuildSessionId>
